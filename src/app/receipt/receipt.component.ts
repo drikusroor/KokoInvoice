@@ -21,7 +21,7 @@ export interface IReceiptForm {
     <hr>
     <div class="row" *ngFor="let cost of receiptService.costs">
       <div class="column-left">
-        {{cost.description}}
+        <pre>{{cost.description}}</pre>
       </div>
       <div class="column-right">
         €{{cost.price | number : '1.2-2'}}
@@ -30,7 +30,7 @@ export interface IReceiptForm {
     <div class="row">
       <form (ngSubmit)="addCost()">
         <div class="column-left">
-          <input  type="text" [(ngModel)]="newCost.description" name="description"/>
+          <textarea  type="text" [(ngModel)]="newCost.description" name="description"></textarea>
         </div>
         <div class="column-right">
           <span [hidden]="!newCost.price">€</span>
@@ -66,7 +66,12 @@ export interface IReceiptForm {
   styles: [
     '.column-left { width: 75%; min-height: 1px; float: left; display: inline-block; text-align: left; }',
     '.column-right { width: 25%; float:left; display: inline-block; text-align: right;}',
-    '.column-right input { text-align: right;  width: 50%;}'
+    '.column-right input { text-align: right;  width: 50%;}',
+    'pre {    white-space: pre-wrap; white-space: -moz-pre-wrap;' +
+    'white-space: -pre-wrap;' +
+    'white-space: -o-pre-wrap;' +
+    'word-wrap: break-word;' +
+    '}'
   ],
   providers: [
     ReceiptService
@@ -92,6 +97,7 @@ export class ReceiptComponent  {
   public addCost = (): void => {
     var newCost: ICost = this.newCost;
     if (newCost.description !== null && newCost.price !== null) {
+      console.log(newCost);
       this.receiptService.addCost(newCost);
       this.newCost = { description: null, price: null};
     }

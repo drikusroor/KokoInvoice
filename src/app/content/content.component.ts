@@ -20,7 +20,7 @@ import { Component } from '@angular/core';
         <hr>
       </div>
       <div class="row">
-        <p>Betreft: <input type="text"/></p>
+        <p>Betreft: <input type="text" style="width: 80%;"/></p>
       </div>
       <div class="row">
         <p>Factuurdatum: <input type="text"/></p>
@@ -38,7 +38,8 @@ import { Component } from '@angular/core';
     </div>`,
   styles: [
     '.content { width: 80%; margin: auto;}',
-    '.receiver { width: 40%; margin-left: 60%; margin-top: 10px; height: 100px; }'
+    '.receiver { width: 40%; margin-left: 60%; margin-top: 10px; height: 100px; }',
+    '.receiver input { width: 100% ;}'
   ]
 })
 export class ContentComponent  {
