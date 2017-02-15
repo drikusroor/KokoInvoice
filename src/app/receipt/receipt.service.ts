@@ -7,6 +7,14 @@ export interface ICost {
   price: number;
 }
 
+export class Receipt {
+  costs: ICost[];
+  vat: number;
+  totalCostExVat: number;
+  totalVat: number;
+  totalCost: number;
+}
+
 @Injectable()
 export class ReceiptService {
   costs: ICost[];
