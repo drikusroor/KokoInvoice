@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+import { LocalStorageModule } from 'angular-2-local-storage';
+
 import { AppComponent } from './app.component';
 import { KokoInvoiceComponent } from './koko-invoice/koko-invoice.component'
 import { HeaderComponent} from './header/header.component'
@@ -20,7 +22,11 @@ import { ReceiptComponent} from './receipt/receipt.component'
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    LocalStorageModule.withConfig({
+      prefix: 'my-app',
+      storageType: 'localStorage'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
