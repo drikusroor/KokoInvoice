@@ -33,17 +33,17 @@ export class ReceiptService {
       var storedReceipt = JSON.parse(storedReceiptString)
 
       this.costs = storedReceipt.costs;
-      this.vat = storedReceipt.vat;
+      // this.vat = storedReceipt.vat;
       this.totalCostExVat = storedReceipt.totalCostExVat;
       this.totalVat = storedReceipt.totalVat;
       this.totalCost = storedReceipt.totalCost  ;
     } else {
       this.costs = [];
-      this.vat = 21;
       this.totalCostExVat = 0;
       this.totalVat = 0;
       this.totalCost = 0;
     }
+    this.vat = 21;
 
   }
 
@@ -78,7 +78,7 @@ export class ReceiptService {
   public saveReceipt = (): void => {
     var totalReceipt: any = {
       costs: this.costs,
-      vat: this.vat,
+      // vat: this.vat,
       totalCostExVat: this.totalCostExVat,
       totalCost: this.totalCost
     }
