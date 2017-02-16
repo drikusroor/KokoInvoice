@@ -70,6 +70,11 @@ export class ReceiptService {
     this.calcNewTotalCost(this.costs);
   }
 
+  public deleteCost = (index: number): void => {
+    this.costs.splice(index, 1);
+    this.calcNewTotalCost(this.costs);
+  }
+
   public saveReceipt = (): void => {
     var totalReceipt: any = {
       costs: this.costs,

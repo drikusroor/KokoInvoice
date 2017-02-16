@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { LocalStorageModule } from 'angular-2-local-storage';
+import { Angular2FontawesomeModule } from 'angular2-fontawesome/angular2-fontawesome'
 
 import { AppComponent } from './app.component';
 import { KokoInvoiceComponent } from './koko-invoice/koko-invoice.component'
@@ -26,7 +27,8 @@ import { ReceiptComponent} from './receipt/receipt.component'
     LocalStorageModule.withConfig({
       prefix: 'my-app',
       storageType: 'localStorage'
-    })
+    }),
+    Angular2FontawesomeModule 
   ],
   providers: [],
   bootstrap: [AppComponent]

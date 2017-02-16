@@ -19,13 +19,14 @@ export interface IReceiptForm {
       </div>
     </div>
     <hr>
-    <div class="row" *ngFor="let cost of receiptService.costs">
+    <div class="row relative" *ngFor="let cost of receiptService.costs; let i = index">
       <div class="column-left">
         <pre>{{cost.description}}</pre>
       </div>
       <div class="column-right">
         €{{cost.price | number : '1.2-2'}}
       </div>
+      <fa (click)="deleteCost(i)" class="delete-cost" name="close"></fa>
     </div>
     <div class="row">
       <form (ngSubmit)="addCost()">
@@ -64,9 +65,11 @@ export interface IReceiptForm {
 
     `,
   styles: [
+    '.row { position: relative }',
     '.column-left { width: 75%; min-height: 1px; float: left; display: inline-block; text-align: left; }',
     '.column-right { width: 25%; float:left; display: inline-block; text-align: right;}',
     '.column-right input { text-align: right;  width: 50%;}',
+    '.delete-cost { position: absolute; right: -25px; top: -1px; cursor: pointer}',
     'pre {    white-space: pre-wrap; white-space: -moz-pre-wrap;' +
     'white-space: -pre-wrap;' +
     'white-space: -o-pre-wrap;' +
@@ -101,6 +104,10 @@ export class ReceiptComponent  {
       this.receiptService.addCost(newCost);
       this.newCost = { description: null, price: null};
     }
+  }
+
+  public deleteCost = (index: number): void => {
+    this.receiptService.deleteCost(index);
   }
 
 }
