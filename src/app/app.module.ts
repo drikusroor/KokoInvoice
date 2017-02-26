@@ -10,7 +10,7 @@ import { AppComponent } from './app.component';
 import { KokoInvoiceComponent } from './koko-invoice/koko-invoice.component'
 import { HeaderComponent} from './header/header.component'
 import { ContentComponent} from './content/content.component'
-import { ReceiptComponent} from './receipt/receipt.component'
+import { ReceiptComponent} from './receipt-detail/receipt.component'
 
 @NgModule({
   declarations: [
@@ -28,7 +28,7 @@ import { ReceiptComponent} from './receipt/receipt.component'
       prefix: 'my-app',
       storageType: 'localStorage'
     }),
-    Angular2FontawesomeModule 
+    Angular2FontawesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
