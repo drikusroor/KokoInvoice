@@ -37,7 +37,13 @@ const appRoutes: Routes = [
     KokoInvoiceComponent,
     HeaderComponent,
     ContentComponent,
-    ReceiptDetailComponent
+    ReceiptDetailComponent,
+    OverviewComponent,
+    CustomerListComponent,
+    CustomerDetailComponent,
+    ReceiptListComponent,
+    ReceiptDetailComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
