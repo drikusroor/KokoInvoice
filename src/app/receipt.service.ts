@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { LocalStorageService } from 'angular-2-local-storage';
 import { ILocalStorageServiceConfig } from 'angular-2-local-storage';
-import { Cost, Receipt } from './receipt';
+import { Cost, Receipt } from './receipt-detail/receipt';
 
 @Injectable()
 export class ReceiptService {
@@ -10,7 +10,7 @@ export class ReceiptService {
   totalCostExVat: number;
   totalVat: number;
   totalCost: number;
- 
+
   constructor
   (
     private localStorageService: LocalStorageService
@@ -32,7 +32,6 @@ export class ReceiptService {
       this.totalCost = 0;
     }
     this.vat = 21;
-
   }
 
   public calcNewTotalCost = (costs: Cost[]): void => {
@@ -72,4 +71,5 @@ export class ReceiptService {
     }
     this.localStorageService.set('receipt', JSON.stringify(totalReceipt));
   }
+
 }

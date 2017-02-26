@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ReceiptService } from '.././receipt-detail/receipt.service';
+import { ReceiptService } from '../receipt.service';
 
 @Component({
   providers: [ReceiptService],
