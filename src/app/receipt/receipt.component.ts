@@ -100,7 +100,6 @@ export class ReceiptComponent  {
   public addCost = (): void => {
     var newCost: ICost = this.newCost;
     if (newCost.description !== null && newCost.price !== null) {
-      console.log(newCost);
       this.receiptService.addCost(newCost);
       this.newCost = { description: null, price: null};
     }
