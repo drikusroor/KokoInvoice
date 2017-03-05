@@ -23,7 +23,7 @@ const appRoutes: Routes = [
   { path: 'customers', component: CustomerListComponent },
   { path: 'customers/:id', component: CustomerDetailComponent },
   { path: 'receipts', component: ReceiptListComponent },
-  { path: 'receipts/:id', component: ReceiptDetailComponent },
+  { path: 'receipts/:id', component: KokoInvoiceComponent },
   { path: '',
     redirectTo: '/overview',
     pathMatch: 'full'
