@@ -1,5 +1,5 @@
-import {Address} from './address';
-import {GuidService} from './shared/guid.service';
+import {Address} from '../address';
+import {GuidService} from '../shared/guid.service';
 
 export class Customer {
     guidService: GuidService;

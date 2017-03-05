@@ -8,3 +8,5 @@
   <li *ngFor="let customer of customers; let i = index; trackBy: id">{{customer.name}}</li>
 
 </ul>
+
+<button (click)="addCustomer()">Voeg customer toe!</button>
