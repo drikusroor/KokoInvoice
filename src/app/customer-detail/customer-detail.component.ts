@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Customer } from '../customer';
 
+
 @Component({
   selector: 'app-customer-detail',
   templateUrl: './customer-detail.component.html',
@@ -10,9 +11,9 @@ export class CustomerDetailComponent implements OnInit {
 
   customer: Customer;
 
-  constructor() {
-    this.customer = new Customer('Koko Kodang');
-   }
+  constructor(){
+    
+  }
 
   ngOnInit() {
   }
