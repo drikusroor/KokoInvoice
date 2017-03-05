@@ -10,7 +10,8 @@ export class CustomerService {
   constructor(
     private localStorageService: LocalStorageService
   ) {
-    let customersString: any = this.localStorageService.get('customers');
+    let customersString: string = "";
+    //let customersString: any = this.localStorageService.get('customers');
     if (customersString) {
       this.customers = JSON.parse(customersString)
     } else {
@@ -19,7 +20,7 @@ export class CustomerService {
    }
 
    public saveCustomers = (customers: Customer[]): void => {
-     this.localStorageService.set('customers', customers);
+     //this.localStorageService.set('customers', customers);
    }
 
    public addCustomer = (customer: Customer):void => {
@@ -28,11 +29,13 @@ export class CustomerService {
    }
 
    public deleteCustomer = (customerId: AAGUID): void => {
-     this.customers = this.customers.map((customer) => {
-       if(customerId !== customer.id) {
-         return customer;
-       }
+     let newCustomers = this.customers.filter((customer) => {
+       return (customerId !== customer.id)
+      //  if(customerId !== customer.id) {
+      //    return customer;
+      //  }
      })
+     this.customers = newCustomers;
      this.saveCustomers(this.customers);
    }
 

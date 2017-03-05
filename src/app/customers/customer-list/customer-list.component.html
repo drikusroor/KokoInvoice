@@ -5,7 +5,11 @@
 
 <ul>
 
-  <li *ngFor="let customer of customers; let i = index; trackBy: id">{{customer.name}}</li>
+  <li *ngFor="let customer of customerService.customers; let i = index; trackBy: id">
+    {{customer.name}}
+    <button (click)="customerService.deleteCustomer(customer.id)">Verwijder</button>
+  </li>
+  
 
 </ul>
 
