@@ -1,23 +1,11 @@
 import { Injectable } from '@angular/core';
 import { LocalStorageService } from 'angular-2-local-storage';
 import { ILocalStorageServiceConfig } from 'angular-2-local-storage';
-
-export interface ICost {
-  description: string;
-  price: number;
-}
-
-export class Receipt {
-  costs: ICost[];
-  vat: number;
-  totalCostExVat: number;
-  totalVat: number;
-  totalCost: number;
-}
+import { Cost, Receipt } from './receipt-detail/receipt';
 
 @Injectable()
 export class ReceiptService {
-  costs: ICost[];
+  costs: Cost[];
   vat: number;
   totalCostExVat: number;
   totalVat: number;
@@ -44,10 +32,9 @@ export class ReceiptService {
       this.totalCost = 0;
     }
     this.vat = 21;
-
   }
 
-  public calcNewTotalCost = (costs: ICost[]): void => {
+  public calcNewTotalCost = (costs: Cost[]): void => {
     var newTotalCost: number = 0;
     for(var i=0; i < costs.length; i++) {
       newTotalCost = newTotalCost + costs[i].price;
@@ -64,7 +51,7 @@ export class ReceiptService {
     this.saveReceipt();
   }
 
-  public addCost = (newCost: ICost): void => {
+  public addCost = (newCost: Cost): void => {
     this.costs.push(newCost);
 
     this.calcNewTotalCost(this.costs);
@@ -84,4 +71,5 @@ export class ReceiptService {
     }
     this.localStorageService.set('receipt', JSON.stringify(totalReceipt));
   }
+
 }

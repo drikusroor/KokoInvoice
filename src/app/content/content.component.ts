@@ -33,7 +33,7 @@ import { Component } from '@angular/core';
         Rek.nr: NL36 RABO 0313 2715 77, t.n.v. Koko Koding</p>
       </div>
       <div class="row">
-        <receipt></receipt>
+        <app-receipt-detail></app-receipt-detail>
       </div>
     </div>`,
   styles: [

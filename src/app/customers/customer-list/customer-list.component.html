@@ -1,0 +1,22 @@
+<p>
+  customer-list works!
+</p>
+
+
+<ul>
+
+  <li *ngFor="let customer of customerService.customers; let i = index; trackBy: id">
+    {{customer.name}}
+    <button (click)="customerService.deleteCustomer(customer.id)">Verwijder</button>
+  </li>
+  
+
+</ul>
+
+<form>
+  <input type="text" [(ngModel)]="newCustomer.name" name="name"/>
+  <input type="text" [(ngModel)]="newCustomer.adres" name="adres"/>
+  <input type="text" [(ngModel)]="newCustomer.email" name="email"/>
+  <input type="text" [(ngModel)]="newCustomer.tel" name="tel"/>
+  <button (click)="addCustomer(newCustomer)">Voeg customer toe!</button>
+</form>

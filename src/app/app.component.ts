@@ -4,7 +4,8 @@ import { Component } from '@angular/core';
   selector: 'app-root',
   // templateUrl: './app.component.html',
   template: `
-    <invoice></invoice>
+  <router-outlet></router-outlet>
+  <!-- Routed views go here -->
   `,
   styleUrls: ['./app.component.css']
 })
