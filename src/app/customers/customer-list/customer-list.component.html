@@ -14,9 +14,26 @@
 </ul>
 
 <form>
-  <input type="text" [(ngModel)]="newCustomer.name" name="name"/>
-  <input type="text" [(ngModel)]="newCustomer.adres" name="adres"/>
-  <input type="text" [(ngModel)]="newCustomer.email" name="email"/>
-  <input type="text" [(ngModel)]="newCustomer.tel" name="tel"/>
-  <button (click)="addCustomer(newCustomer)">Voeg customer toe!</button>
+  <md-input-container>
+    <input mdInput placeholder="Klantnaam" value="Klant A" type="text" [(ngModel)]="newCustomer.name" name="name"/>  
+  </md-input-container>
+  <br>
+  <md-input-container>
+    <input mdInput placeholder="Adres" value="Voorbeeldstraat" type="text" [(ngModel)]="newCustomer.address" name="address"/>  
+  </md-input-container>
+  <br>
+  <md-input-container>
+    <input mdInput placeholder="Email" value="info@example.com A" type="text" [(ngModel)]="newCustomer.email" name="email"/>  
+  </md-input-container>
+  <br>
+  <md-input-container>
+    <input mdInput placeholder="Telephone" value="0000 123456" type="text" [(ngModel)]="newCustomer.tel" name="telephone"/>  
+  </md-input-container>
+  <br>
+  <button md-button (click)="addCustomer(newCustomer)">Voeg customer toe!</button>
+  
 </form>
+
+    <input mdInput type="text" [(ngModel)]="newCustomer.adres" name="adres"/>
+    <input mdInput type="text" [(ngModel)]="newCustomer.email" name="email"/>
+    <input mdInput type="text" [(ngModel)]="newCustomer.tel" name="tel"/>

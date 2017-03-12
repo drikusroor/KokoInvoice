@@ -5,7 +5,8 @@ import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 
 import { LocalStorageModule } from 'angular-2-local-storage';
-import { Angular2FontawesomeModule } from 'angular2-fontawesome/angular2-fontawesome'
+import { Angular2FontawesomeModule } from 'angular2-fontawesome/angular2-fontawesome';
+import { MaterialModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { KokoInvoiceComponent } from './koko-invoice/koko-invoice.component'
@@ -54,7 +55,8 @@ const appRoutes: Routes = [
       prefix: 'my-app',
       storageType: 'localStorage'
     }),
-    Angular2FontawesomeModule
+    Angular2FontawesomeModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]

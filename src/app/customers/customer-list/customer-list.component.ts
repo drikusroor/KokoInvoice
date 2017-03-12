@@ -11,9 +11,10 @@ import { CustomerService } from '../customer.service';
 export class CustomerListComponent implements OnInit {
 
   customers: Customer[];
+  newCustomer: {};
 
   constructor(private customerService: CustomerService) {
-    
+    this.newCustomer = {};
   }
 
   public addCustomer = ():void => {
