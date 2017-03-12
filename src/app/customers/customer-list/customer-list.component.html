@@ -13,4 +13,10 @@
 
 </ul>
 
-<button (click)="addCustomer()">Voeg customer toe!</button>
+<form>
+  <input type="text" [(ngModel)]="newCustomer.name" name="name"/>
+  <input type="text" [(ngModel)]="newCustomer.adres" name="adres"/>
+  <input type="text" [(ngModel)]="newCustomer.email" name="email"/>
+  <input type="text" [(ngModel)]="newCustomer.tel" name="tel"/>
+  <button (click)="addCustomer(newCustomer)">Voeg customer toe!</button>
+</form>
