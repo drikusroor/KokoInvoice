@@ -3,7 +3,7 @@
   src: url('./assets/fonts/lsansuni.ttf');
 }
 
-.factuur .default-font {
+.default-font {
   font-family: LucidaSansUnicode, Helvetica, Arial, sans-serif;;
   font-weight: 100;
   font-size: 10pt;
@@ -18,6 +18,10 @@ body {
   border: none;
   height: 1200px;
   // @extend .default-font;
+}
+
+body .factuur {
+  @extend .default-font;
 }
 
 @media print {
