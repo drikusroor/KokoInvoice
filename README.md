@@ -1,6 +1,6 @@
 # InvoiceKokoStyle
 
-Invoice Koko Style is Koko Koding's \#1 choice in making invoices for its customers. It is a simple web application which allows for adding costs and description, thereby calculating a total price including value added tax.
+Invoice Koko Style is Koko Koding's \#2 choice in making invoices for its customers. It is a simple web application which allows for adding costs and description, thereby calculating a total price including value added tax.
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.26.
 
